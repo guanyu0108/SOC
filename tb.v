@@ -7,19 +7,19 @@ module tb;
         x = 0;
         y = 0;
         #5;
-        $display("s=%d, c=%d", s, c);
+        $display("s=%d, c=%d", s, c); // =0
         x = 1;
         y = 0;
         #5;
-        $display("s=%d, c=%d", s, c);
+        $display("s=%d, c=%d", s, c); // = 1
         x = 0;
         y = 1;
         #5;
-        $display("s=%d, c=%d", s, c);
+        $display("s=%d, c=%d", s, c); // =1
         x = 1;
         y = 1;
         #5;
-        $display("s=%d, c=%d", s, c);    
+        $display("s=%d, c=%d", s, c);  // = 1 1 
 
         $finish;
     end
