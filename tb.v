@@ -4,24 +4,24 @@ module tb;
     wire s, c;
 
     initial begin
-    x = 0;
-    y = 0;
-    #5;
-    $display("s=%d, c=%d", s, c);
-    x = 1;
-    y = 0;
-    #5;
-    $display("s=%d, c=%d", s, c);
-    x = 0;
-    y = 1;
-    #5;
-    $display("s=%d, c=%d", s, c);
-    x = 1;
-    y = 1;
-    #5;
-    $display("s=%d, c=%d", s, c);    
+        x = 0;
+        y = 0;
+        #5;
+        $display("s=%d, c=%d", s, c);
+        x = 1;
+        y = 0;
+        #5;
+        $display("s=%d, c=%d", s, c);
+        x = 0;
+        y = 1;
+        #5;
+        $display("s=%d, c=%d", s, c);
+        x = 1;
+        y = 1;
+        #5;
+        $display("s=%d, c=%d", s, c);    
 
-    $finish;
+        $finish;
     end
     half_adder DUT(x, y, s, c);
 endmodule
