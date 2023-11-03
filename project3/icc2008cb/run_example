@@ -1,0 +1,9 @@
+echo ====================
+echo
+echo ncverilog: 
+echo ncverilog testfixture.v DPA.v +define+tb1 +loadpli1=tglib:tg +access+r
+echo
+echo vcs: 
+echo vcs -R testfixture.v DPA.v +define+tb2 +v2k -P verdi.tab pli.a -P tg.tab tglib.so
+echo
+echo ====================
