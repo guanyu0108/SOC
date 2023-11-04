@@ -75,4 +75,62 @@ always @(posedge clk or posedge reset) begin
         end
     end
 end
+
+//1 second timer, when reach 1 second it will trigger a pulse 
+reg [3:0] hour[0:1];
+reg [7:0] minute[0:1];
+reg [7:0] second[0:1];
+
+//200ms timer
+reg [17:0] cnt_200ms;
+reg        timeout_200ms; 
+always @(posedge clk or negedge reset) begin
+    if(reset)begin
+        cnt_200ms <= 0;
+    end else begin
+        if(cnt_200ms ==(200000-1))begin
+            cnt_200ms     <= 0;
+            timeout_200ms <= 1'b1;
+        end else begin
+            cnt_200ms     <= cnt_200ms+1;
+            timeout_200ms <= 1'b0;
+        end
+    end
+end
+
+//1s timer
+reg [8:0] cnt_1s;
+reg       timeout_1s;
+always @(posedge clk or posedge reset) begin
+    if(reset)begin
+        cnt_1s <= 0;
+    end else begin
+        if(timeout_200ms)begin
+            if(cnt_1s == (500-1))begin
+                cnt_1s     <= 0;
+                timeout_1s <= 1'b1;
+            end else begin
+                cnt_1s     <= cnt_1s+1;
+                timeout_1s <= 1'b0;
+            end
+        end
+    end
+end
+
+always @(posedge clk or negedge reset) begin
+    if(reset)begin
+        hour   <= 0;
+        minute <= 0;
+        second <= 0;
+    end else begin
+        if(im_read && (im_read_addr == 0))begin
+            {hour, minute, second} = IM_Q;
+        end else begin
+            if()begin
+            end    
+        end
+    end
+end
+wire pixel_buffer;
+//write fram bufffer logic
 endmodule
