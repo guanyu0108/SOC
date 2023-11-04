@@ -1,5 +1,5 @@
 module DPA (
-    clk,
+    clk,//1Mhz = 0.000001s = 0.001ms = 1us = 1000ns
     reset,
     IM_A,
     IM_Q,
