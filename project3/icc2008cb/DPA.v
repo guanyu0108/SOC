@@ -86,7 +86,8 @@ reg [17:0] cnt_200ms;
 reg        timeout_200ms; 
 always @(posedge clk or negedge reset) begin
     if(reset)begin
-        cnt_200ms <= 0;
+        cnt_200ms     <= 0;
+        timeout_200ms <= 0;
     end else begin
         if(cnt_200ms ==(200000-1))begin
             cnt_200ms     <= 0;
@@ -103,7 +104,8 @@ reg [8:0] cnt_1s;
 reg       timeout_1s;
 always @(posedge clk or posedge reset) begin
     if(reset)begin
-        cnt_1s <= 0;
+        cnt_1s     <= 0;
+        timeout_1s <= 0;
     end else begin
         if(timeout_200ms)begin
             if(cnt_1s == (500-1))begin
