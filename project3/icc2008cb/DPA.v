@@ -160,7 +160,7 @@ always @(posedge clk or negedge reset) begin
         end
     end
 end
-//========FSM=========
+//===================FSM===========================
 localparam IDLE             = 0;
 localparam GET_HEADER       = 1;
 localparam SHOW_INIT_TIME   = 2;
@@ -172,7 +172,7 @@ localparam PX_TRANS2        = 7;
 
 reg [2:0] state;
 reg [2:0] next_state;
-//state register
+//=================FSM state register==============
 always @(posedge clk or posedge reset) begin
     if(reset)begin
         state <= IDLE;
@@ -180,7 +180,7 @@ always @(posedge clk or posedge reset) begin
         state <= next_state;
     end
 end
-//next state logic
+//==============FSM next state logic==================
 always @* begin
     case(state)
         IDLE:next_state = GET_HEADER;
@@ -231,6 +231,42 @@ always @* begin
         end
     endcase
 end
-//output logic
+//==============FSM output logic==================
+wire   get_header_en;
+assign get_header_en = (state == GET_HEADER);
+//get header logic
+reg [3:0] header_cnt;
+reg       get_header_done;
+always @(posedge clk or negedge reset) begin
+    if(reset)begin
+        header_cnt      <= 0;
+        get_header_done <= 0;
+    end else begin
+        if(get_header_en)begin
+            if(header_cnt == 10)begin
+                get_header_done <= 1'b1;
+            end else begin
+                header_cnt <= header_cnt + 1'b1;
+            end
+        end
+    end
+end
 
+//address and write data arbitrator
+
+output [19:0] IM_A;
+input  [23:0] IM_Q;
+output [23:0] IM_D;
+output        IM_WEN;
+output  [8:0] CR_A;
+input  [12:0] CR_Q;
+always @* begin
+    case()
+
+    endcase
+end
+
+always @() begin
+    
+end
 endmodule
