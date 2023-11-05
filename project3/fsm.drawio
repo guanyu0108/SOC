@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="hnw1SlXqg3iLBMmCQ3Hd" name="Page-1">
-        <mxGraphModel dx="727" dy="507" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="766" dy="354" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -164,9 +164,6 @@
                             <mxPoint x="820" y="1160"/>
                         </Array>
                     </mxGeometry>
-                </mxCell>
-                <mxCell id="89" value="&lt;span style=&quot;font-weight: 700;&quot;&gt;沒照片了&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="810" y="1030" width="150" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="116" value="" style="edgeStyle=none;html=1;" parent="1" source="90" target="105" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
@@ -434,23 +431,152 @@
                 <mxCell id="298" value="tims_up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1440" y="480" width="70" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="299" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-                    <mxGeometry x="990" y="220" width="80" height="80" as="geometry"/>
+                <mxCell id="299" value="顯示下一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="1275" y="695" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="300" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="300" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1170" y="230" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="301" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="301" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1080" y="190" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="302" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="302" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1100" y="300" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="303" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
-                    <mxGeometry x="990" y="375" width="80" height="80" as="geometry"/>
+                <mxCell id="303" value="顯示第一張圖&lt;br&gt;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="1110" y="700" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="304" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="304" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1320" y="260" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="308" value="get init value&lt;br&gt;&amp;nbsp;&amp;nbsp;&lt;br&gt;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="700" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="310" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="303" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1010" y="780" as="sourcePoint"/>
+                        <mxPoint x="1060" y="730" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1080" y="810"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="311" value="init_ok" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="310" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2753" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="312" value="&lt;div style=&quot;text-align: start;&quot;&gt;&lt;font face=&quot;monospace&quot; color=&quot;rgba(0, 0, 0, 0)&quot;&gt;&lt;span style=&quot;font-size: 0px; background-color: rgb(251, 251, 251);&quot;&gt;asdasdasdas&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="endArrow=classic;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" edge="1">
+                    <mxGeometry y="29" width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1343.2842712474617" y="764.2842712474619" as="sourcePoint"/>
+                        <mxPoint x="1286.715728752538" y="764.2842712474617" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1315" y="801"/>
+                        </Array>
+                        <mxPoint x="28" y="11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="315" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="303" target="299" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1280" y="680" as="sourcePoint"/>
+                        <mxPoint x="1330" y="630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="316" value="2second timeout" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="315" vertex="1" connectable="0">
+                    <mxGeometry x="0.2931" y="2" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="320" value="2second timeout" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1" vertex="1" connectable="0">
+                    <mxGeometry x="1240.5006996044183" y="729.7317957449252" as="geometry">
+                        <mxPoint x="78" y="83" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="324" value="直接更新圖案" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="870" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="325" value="IDLE" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="1300" y="860" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="327" value="時間更新完畢" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="1050" y="870" width="60" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="331" value="" style="endArrow=classic;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="325" target="346" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1180" y="910" as="sourcePoint"/>
+                        <mxPoint x="1169.9999999999998" y="935" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="352" value="需要更新" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="331">
+                    <mxGeometry x="-0.3758" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="332" value="" style="endArrow=classic;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="324" edge="1" target="325">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1180" y="910" as="sourcePoint"/>
+                        <mxPoint x="1160" y="850" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1100" y="840"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="339" value="轉場2" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="1070" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="340" value="轉場1" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1200" y="1070" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="342" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.022;exitY=0.381;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="340" target="339">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1200" y="950" as="sourcePoint"/>
+                        <mxPoint x="1144" y="1109.8400000000001" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="344" value="" style="endArrow=classic;html=1;entryX=0.727;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="346" target="324">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1226" y="960" as="sourcePoint"/>
+                        <mxPoint x="1170" y="1119.8400000000001" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1140" y="1040"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="345" value="更新＆＆不需要轉場" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="344">
+                    <mxGeometry x="-0.3984" y="-5" relative="1" as="geometry">
+                        <mxPoint x="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="346" value="更新時間" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1380" y="1010" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="347" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.022;exitY=0.381;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="325">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1420" y="1010" as="sourcePoint"/>
+                        <mxPoint x="1503.4757287525524" y="853.2842712474478" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="348" value="僅更新時間" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="347">
+                    <mxGeometry x="0.376" y="-5" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="349" value="" style="endArrow=classic;html=1;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0.289;exitY=1.027;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="346" target="340">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1390" y="1160" as="sourcePoint"/>
+                        <mxPoint x="1350" y="1050" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="350" value="更新圖片＆＆需要轉場" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="349">
+                    <mxGeometry x="0.376" y="-5" relative="1" as="geometry">
+                        <mxPoint x="62" y="11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="351" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1070" y="1070" as="sourcePoint"/>
+                        <mxPoint x="1305" y="897.5" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>

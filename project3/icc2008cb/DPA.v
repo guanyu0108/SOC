@@ -82,37 +82,64 @@ reg [7:0] minute[0:1];
 reg [7:0] second[0:1];
 
 //200ms timer
-reg [17:0] cnt_200ms;
+reg [17:0] cnt_1us;
 reg        timeout_200ms; 
 always @(posedge clk or negedge reset) begin
     if(reset)begin
-        cnt_200ms     <= 0;
+        cnt_1us       <= 0;
         timeout_200ms <= 0;
     end else begin
-        if(cnt_200ms ==(200000-1))begin
-            cnt_200ms     <= 0;
+        if(cnt_1us ==(200000-1))begin
+            cnt_1us       <= 0;
             timeout_200ms <= 1'b1;
         end else begin
-            cnt_200ms     <= cnt_200ms+1;
+            cnt_1us       <= cnt_1us + 1'b1;
             timeout_200ms <= 1'b0;
         end
     end
 end
-
+//px_cnt
+reg       cnt_1s;
+reg       update_px;
+reg [1:0] px_idx;
+always @(posedge clk or negedge reset) begin
+    if(reset)begin
+        cnt_1s <= 0;
+        px_idx <= 0;
+    end else begin
+        if(timeout_1s)begin
+            if(cnt_1s)begin
+                update_px <= 1'b1;
+                cnt_1s    <= 0;
+                if(px_idx == photo_num-1)begin
+                    px_idx    <= 0;
+                end else begin
+                    px_idx    <= px_idx + 1'b1;
+                end                    
+            end else begin
+                update_px <= 1'b0;
+                cnt_1s    <= cnt_1s + 1'b1;
+            end    
+        end
+    end
+end
 //1s timer
-reg [8:0] cnt_1s;
+reg [8:0] cnt_200ms;
 reg       timeout_1s;
+reg       trans_flag;
 always @(posedge clk or posedge reset) begin
     if(reset)begin
-        cnt_1s     <= 0;
+        cnt_200ms  <= 0;
         timeout_1s <= 0;
+        trans_flag <= 0;
     end else begin
         if(timeout_200ms)begin
-            if(cnt_1s == (500-1))begin
-                cnt_1s     <= 0;
+            if(cnt_200ms == (500-1))begin
+                cnt_200ms  <= 0;
                 timeout_1s <= 1'b1;
+                trans_flag <= 1'b1;
             end else begin
-                cnt_1s     <= cnt_1s+1;
+                cnt_200ms  <= cnt_200ms + 1'b1;
                 timeout_1s <= 1'b0;
             end
         end
@@ -133,6 +160,77 @@ always @(posedge clk or negedge reset) begin
         end
     end
 end
-wire pixel_buffer;
-//write fram bufffer logic
+//========FSM=========
+localparam IDLE             = 0;
+localparam GET_HEADER       = 1;
+localparam SHOW_INIT_TIME   = 2;
+localparam SHOW_P1          = 3;
+localparam WAIT_UPDATE_TIME = 4;
+localparam SHOW_TIME        = 6;
+localparam PX_TRANS1        = 7;
+localparam PX_TRANS2        = 8;
+
+reg [3:0] state;
+reg [3:0] next_state;
+//state register
+always @(posedge clk or posedge reset) begin
+    if(reset)begin
+        state <= IDLE;
+    end else begin
+        state <= next_state;
+    end
+end
+//next state logic
+always @* begin
+    case(state)
+        IDLE:next_state = GET_HEADER;
+        GET_HEADER:begin
+            if(get_header_done)
+                next_state = SHOW_TIME;
+            else
+                next_state = GET_HEADER;
+        end 
+        SHOW_INIT_TIME:begin
+            if(show_time_done)
+                next_state = SHOW_P1;
+            else 
+                next_state = SHOW_INIT_TIME;
+        end 
+        SHOW_P1:begin
+            if(p1_done)
+                next_state = WAIT_UPDATE;
+            else
+                next_state = SHOW_P1;
+        end 
+        WAIT_UPDATE_TIME:begin
+            if(timeout_1s)
+                next_state = SHOW_TIME;
+            else
+                next_state = WAIT_UPDATE_TIME;
+        end 
+        SHOW_TIME:begin
+            if(!show_time_done)begin
+                next_state = SHOW_TIME;
+            end else if (update_px) begin
+                next_state = PX_TRANS1;
+            end else begin
+                next_state = WAIT_UPDATE_TIME;
+            end
+        end 
+        PX_TRANS1:begin
+            if(trans1_done)
+                next_state = PX_TRANS2;
+            else
+                next_state = PX_TRANS1;
+        end
+        PX_TRANS2:begin
+            if(trans2_done)
+                next_state = WAIT_UPDATE;
+            else
+                next_state = PX_TRANS2;
+        end
+    endcase
+end
+//output logic
+
 endmodule
