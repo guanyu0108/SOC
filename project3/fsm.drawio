@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="hnw1SlXqg3iLBMmCQ3Hd" name="Page-1">
-        <mxGraphModel dx="551" dy="571" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="727" dy="507" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -360,7 +360,7 @@
                         <mxPoint x="1430.00000000001" y="160" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="235" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="227" target="234">
+                <mxCell id="235" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="227" target="234" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="1400" y="270"/>
@@ -379,60 +379,78 @@
                 <mxCell id="234" value="wait 1 sec&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1275" y="120" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="281" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="279" target="280">
+                <mxCell id="281" value="" style="edgeStyle=none;html=1;" parent="1" source="279" target="280" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="286" style="edgeStyle=none;html=1;" edge="1" parent="1" source="279" target="285">
+                <mxCell id="286" style="edgeStyle=none;html=1;" parent="1" source="279" target="285" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="279" value="read px&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="279" value="read px&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1120" y="390" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="284" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="280" target="283">
+                <mxCell id="284" value="" style="edgeStyle=none;html=1;" parent="1" source="280" target="283" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="295" style="edgeStyle=none;html=1;" edge="1" parent="1" source="280" target="294">
+                <mxCell id="295" style="edgeStyle=none;html=1;" parent="1" source="280" target="294" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="280" value="first_img&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="280" value="first_img&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1285" y="390" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="282" value="first_img = 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="282" value="first_img = 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1370" y="400" width="70" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="292" style="edgeStyle=none;html=1;entryX=0.621;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="283" target="279">
+                <mxCell id="292" style="edgeStyle=none;html=1;entryX=0.621;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="283" target="279" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="1350" y="350"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="283" value="show&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="283" value="show&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1450" y="390" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="287" style="edgeStyle=none;html=1;" edge="1" parent="1" source="285" target="280">
+                <mxCell id="287" style="edgeStyle=none;html=1;" parent="1" source="285" target="280" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="285" value="resize&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="285" value="resize&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1195" y="500" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="288" value="resize=0" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="288" value="resize=0" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1210" y="400" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="289" value="resize = 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="289" value="resize = 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1125" y="490" width="60" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="297" style="edgeStyle=none;html=1;" edge="1" parent="1" source="294" target="283">
+                <mxCell id="297" style="edgeStyle=none;html=1;" parent="1" source="294" target="283" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="294" value="turn&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                <mxCell id="294" value="turn&lt;br&gt;&amp;nbsp;&amp;nbsp;" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
                     <mxGeometry x="1370" y="490" width="80" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="296" value="tims_up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="296" value="tims_up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1365" y="460" width="70" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="298" value="tims_up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                <mxCell id="298" value="tims_up" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="1440" y="480" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="299" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="990" y="220" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="300" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1170" y="230" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="301" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1080" y="190" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="302" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1100" y="300" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="303" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="990" y="375" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="304" value="顯示地一張圖" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1320" y="260" width="80" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
