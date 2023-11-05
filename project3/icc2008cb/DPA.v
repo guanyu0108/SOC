@@ -161,14 +161,14 @@ always @(posedge clk or negedge reset) begin
     end
 end
 //===================FSM===========================
-localparam IDLE             = 0;
-localparam GET_HEADER       = 1;
-localparam SHOW_INIT_TIME   = 2;
-localparam SHOW_P1          = 3;
-localparam WAIT_UPDATE_TIME = 4;
-localparam SHOW_TIME        = 5;
-localparam PX_TRANS1        = 6;
-localparam PX_TRANS2        = 7;
+localparam IDLE             = 3'd0;
+localparam GET_HEADER       = 3'd1;
+localparam SHOW_INIT_TIME   = 3'd2;
+localparam SHOW_P1          = 3'd3;
+localparam WAIT_UPDATE_TIME = 3'd4;
+localparam SHOW_TIME        = 3'd5;
+localparam PX_TRANS1        = 3'd6;
+localparam PX_TRANS2        = 3'd7;
 
 reg [2:0] state;
 reg [2:0] next_state;
@@ -234,6 +234,8 @@ end
 //==============FSM output logic==================
 wire   get_header_en;
 assign get_header_en = (state == GET_HEADER);
+
+
 //get header logic
 reg [3:0] header_cnt;
 reg       get_header_done;
@@ -251,6 +253,11 @@ always @(posedge clk or negedge reset) begin
         end
     end
 end
+//===========show time logic===========
+
+
+//===========show px logic===========
+
 
 //address and write data arbitrator
 
@@ -260,6 +267,9 @@ output [23:0] IM_D;
 output        IM_WEN;
 output  [8:0] CR_A;
 input  [12:0] CR_Q;
+
+assign IM_A = ()?header_cnt:;
+assign IM_WEN = ()?get_header_en:;
 always @* begin
     case()
 
