@@ -166,12 +166,12 @@ localparam GET_HEADER       = 1;
 localparam SHOW_INIT_TIME   = 2;
 localparam SHOW_P1          = 3;
 localparam WAIT_UPDATE_TIME = 4;
-localparam SHOW_TIME        = 6;
-localparam PX_TRANS1        = 7;
-localparam PX_TRANS2        = 8;
+localparam SHOW_TIME        = 5;
+localparam PX_TRANS1        = 6;
+localparam PX_TRANS2        = 7;
 
-reg [3:0] state;
-reg [3:0] next_state;
+reg [2:0] state;
+reg [2:0] next_state;
 //state register
 always @(posedge clk or posedge reset) begin
     if(reset)begin
