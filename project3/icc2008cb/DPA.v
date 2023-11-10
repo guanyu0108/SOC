@@ -174,6 +174,222 @@ always @(posedge clk or negedge reset) begin
         end
     end
 end
+
+//time decode table
+localparam OFFSET_0     = 9'd0;
+localparam OFFSET_1     = 9'd24;
+localparam OFFSET_2     = 9'd48;
+localparam OFFSET_2     = 9'd72;
+localparam OFFSET_4     = 9'd96;
+localparam OFFSET_5     = 9'd120;
+localparam OFFSET_6     = 9'd144;
+localparam OFFSET_7     = 9'd168;
+localparam OFFSET_8     = 9'd192;
+localparam OFFSET_9     = 9'd216;
+localparam OFFSET_COLON = 9'd240;
+reg [8:0] s0;
+reg [8:0] s1;
+reg [8:0] m0;
+reg [8:0] m1;
+reg [8:0] h0;
+reg [8:0] h1;
+always @(second) begin
+    case(second)
+        7'd0: begin s1 = OFFSET_0; s0 = OFFSET_0; end
+        7'd1: begin s1 = OFFSET_0; s0 = OFFSET_1; end
+        7'd2: begin s1 = OFFSET_0; s0 = OFFSET_2; end
+        7'd3: begin s1 = OFFSET_0; s0 = OFFSET_3; end
+        7'd4: begin s1 = OFFSET_0; s0 = OFFSET_4; end
+        7'd5: begin s1 = OFFSET_0; s0 = OFFSET_5; end
+        7'd6: begin s1 = OFFSET_0; s0 = OFFSET_6; end
+        7'd7: begin s1 = OFFSET_0; s0 = OFFSET_7; end
+        7'd8: begin s1 = OFFSET_0; s0 = OFFSET_8; end
+        7'd9: begin s1 = OFFSET_0; s0 = OFFSET_9; end
+        7'd10:begin s1 = OFFSET_1; s0 = OFFSET_0; end
+        7'd11:begin s1 = OFFSET_1; s0 = OFFSET_1; end
+        7'd12:begin s1 = OFFSET_1; s0 = OFFSET_2; end
+        7'd13:begin s1 = OFFSET_1; s0 = OFFSET_3; end
+        7'd14:begin s1 = OFFSET_1; s0 = OFFSET_4; end
+        7'd15:begin s1 = OFFSET_1; s0 = OFFSET_5; end
+        7'd16:begin s1 = OFFSET_1; s0 = OFFSET_6; end
+        7'd17:begin s1 = OFFSET_1; s0 = OFFSET_7; end
+        7'd18:begin s1 = OFFSET_1; s0 = OFFSET_8; end
+        7'd19:begin s1 = OFFSET_1; s0 = OFFSET_9; end
+        7'd20:begin s1 = OFFSET_2; s0 = OFFSET_0; end
+        7'd21:begin s1 = OFFSET_2; s0 = OFFSET_1; end
+        7'd22:begin s1 = OFFSET_2; s0 = OFFSET_2; end
+        7'd23:begin s1 = OFFSET_2; s0 = OFFSET_3; end
+        7'd24:begin s1 = OFFSET_2; s0 = OFFSET_4; end
+        7'd25:begin s1 = OFFSET_2; s0 = OFFSET_5; end
+        7'd26:begin s1 = OFFSET_2; s0 = OFFSET_6; end
+        7'd27:begin s1 = OFFSET_2; s0 = OFFSET_7; end
+        7'd28:begin s1 = OFFSET_2; s0 = OFFSET_8; end
+        7'd29:begin s1 = OFFSET_2; s0 = OFFSET_9; end
+        7'd30:begin s1 = OFFSET_3; s0 = OFFSET_0; end
+        7'd31:begin s1 = OFFSET_3; s0 = OFFSET_1; end
+        7'd32:begin s1 = OFFSET_3; s0 = OFFSET_2; end
+        7'd33:begin s1 = OFFSET_3; s0 = OFFSET_3; end
+        7'd34:begin s1 = OFFSET_3; s0 = OFFSET_4; end
+        7'd35:begin s1 = OFFSET_3; s0 = OFFSET_5; end
+        7'd36:begin s1 = OFFSET_3; s0 = OFFSET_6; end
+        7'd37:begin s1 = OFFSET_3; s0 = OFFSET_7; end
+        7'd38:begin s1 = OFFSET_3; s0 = OFFSET_8; end
+        7'd39:begin s1 = OFFSET_3; s0 = OFFSET_9; end
+        7'd40:begin s1 = OFFSET_4; s0 = OFFSET_0; end
+        7'd41:begin s1 = OFFSET_4; s0 = OFFSET_1; end
+        7'd42:begin s1 = OFFSET_4; s0 = OFFSET_2; end
+        7'd43:begin s1 = OFFSET_4; s0 = OFFSET_3; end
+        7'd44:begin s1 = OFFSET_4; s0 = OFFSET_4; end
+        7'd45:begin s1 = OFFSET_4; s0 = OFFSET_5; end
+        7'd46:begin s1 = OFFSET_4; s0 = OFFSET_6; end
+        7'd47:begin s1 = OFFSET_4; s0 = OFFSET_7; end
+        7'd48:begin s1 = OFFSET_4; s0 = OFFSET_8; end
+        7'd49:begin s1 = OFFSET_4; s0 = OFFSET_9; end
+        7'd50:begin s1 = OFFSET_5; s0 = OFFSET_0; end
+        7'd51:begin s1 = OFFSET_5; s0 = OFFSET_1; end
+        7'd52:begin s1 = OFFSET_5; s0 = OFFSET_2; end
+        7'd53:begin s1 = OFFSET_5; s0 = OFFSET_3; end
+        7'd54:begin s1 = OFFSET_5; s0 = OFFSET_4; end
+        7'd55:begin s1 = OFFSET_5; s0 = OFFSET_5; end
+        7'd56:begin s1 = OFFSET_5; s0 = OFFSET_6; end
+        7'd57:begin s1 = OFFSET_5; s0 = OFFSET_7; end
+        7'd58:begin s1 = OFFSET_5; s0 = OFFSET_8; end
+        7'd59:begin s1 = OFFSET_5; s0 = OFFSET_9; end
+        default:begin s1 = 0; s0 = 0; end
+    endcase
+end
+
+always @(minute) begin
+    case(minute)
+        7'd0: begin m1 = OFFSET_0; m0 = OFFSET_0; end
+        7'd1: begin m1 = OFFSET_0; m0 = OFFSET_1; end
+        7'd2: begin m1 = OFFSET_0; m0 = OFFSET_2; end
+        7'd3: begin m1 = OFFSET_0; m0 = OFFSET_3; end
+        7'd4: begin m1 = OFFSET_0; m0 = OFFSET_4; end
+        7'd5: begin m1 = OFFSET_0; m0 = OFFSET_5; end
+        7'd6: begin m1 = OFFSET_0; m0 = OFFSET_6; end
+        7'd7: begin m1 = OFFSET_0; m0 = OFFSET_7; end
+        7'd8: begin m1 = OFFSET_0; m0 = OFFSET_8; end
+        7'd9: begin m1 = OFFSET_0; m0 = OFFSET_9; end
+        7'd10:begin m1 = OFFSET_1; m0 = OFFSET_0; end
+        7'd11:begin m1 = OFFSET_1; m0 = OFFSET_1; end
+        7'd12:begin m1 = OFFSET_1; m0 = OFFSET_2; end
+        7'd13:begin m1 = OFFSET_1; m0 = OFFSET_3; end
+        7'd14:begin m1 = OFFSET_1; m0 = OFFSET_4; end
+        7'd15:begin m1 = OFFSET_1; m0 = OFFSET_5; end
+        7'd16:begin m1 = OFFSET_1; m0 = OFFSET_6; end
+        7'd17:begin m1 = OFFSET_1; m0 = OFFSET_7; end
+        7'd18:begin m1 = OFFSET_1; m0 = OFFSET_8; end
+        7'd19:begin m1 = OFFSET_1; m0 = OFFSET_9; end
+        7'd20:begin m1 = OFFSET_2; m0 = OFFSET_0; end
+        7'd21:begin m1 = OFFSET_2; m0 = OFFSET_1; end
+        7'd22:begin m1 = OFFSET_2; m0 = OFFSET_2; end
+        7'd23:begin m1 = OFFSET_2; m0 = OFFSET_3; end
+        7'd24:begin m1 = OFFSET_2; m0 = OFFSET_4; end
+        7'd25:begin m1 = OFFSET_2; m0 = OFFSET_5; end
+        7'd26:begin m1 = OFFSET_2; m0 = OFFSET_6; end
+        7'd27:begin m1 = OFFSET_2; m0 = OFFSET_7; end
+        7'd28:begin m1 = OFFSET_2; m0 = OFFSET_8; end
+        7'd29:begin m1 = OFFSET_2; m0 = OFFSET_9; end
+        7'd30:begin m1 = OFFSET_3; m0 = OFFSET_0; end
+        7'd31:begin m1 = OFFSET_3; m0 = OFFSET_1; end
+        7'd32:begin m1 = OFFSET_3; m0 = OFFSET_2; end
+        7'd33:begin m1 = OFFSET_3; m0 = OFFSET_3; end
+        7'd34:begin m1 = OFFSET_3; m0 = OFFSET_4; end
+        7'd35:begin m1 = OFFSET_3; m0 = OFFSET_5; end
+        7'd36:begin m1 = OFFSET_3; m0 = OFFSET_6; end
+        7'd37:begin m1 = OFFSET_3; m0 = OFFSET_7; end
+        7'd38:begin m1 = OFFSET_3; m0 = OFFSET_8; end
+        7'd39:begin m1 = OFFSET_3; m0 = OFFSET_9; end
+        7'd40:begin m1 = OFFSET_4; m0 = OFFSET_0; end
+        7'd41:begin m1 = OFFSET_4; m0 = OFFSET_1; end
+        7'd42:begin m1 = OFFSET_4; m0 = OFFSET_2; end
+        7'd43:begin m1 = OFFSET_4; m0 = OFFSET_3; end
+        7'd44:begin m1 = OFFSET_4; m0 = OFFSET_4; end
+        7'd45:begin m1 = OFFSET_4; m0 = OFFSET_5; end
+        7'd46:begin m1 = OFFSET_4; m0 = OFFSET_6; end
+        7'd47:begin m1 = OFFSET_4; m0 = OFFSET_7; end
+        7'd48:begin m1 = OFFSET_4; m0 = OFFSET_8; end
+        7'd49:begin m1 = OFFSET_4; m0 = OFFSET_9; end
+        7'd50:begin m1 = OFFSET_5; m0 = OFFSET_0; end
+        7'd51:begin m1 = OFFSET_5; m0 = OFFSET_1; end
+        7'd52:begin m1 = OFFSET_5; m0 = OFFSET_2; end
+        7'd53:begin m1 = OFFSET_5; m0 = OFFSET_3; end
+        7'd54:begin m1 = OFFSET_5; m0 = OFFSET_4; end
+        7'd55:begin m1 = OFFSET_5; m0 = OFFSET_5; end
+        7'd56:begin m1 = OFFSET_5; m0 = OFFSET_6; end
+        7'd57:begin m1 = OFFSET_5; m0 = OFFSET_7; end
+        7'd58:begin m1 = OFFSET_5; m0 = OFFSET_8; end
+        7'd59:begin m1 = OFFSET_5; m0 = OFFSET_9; end
+        default:begin m1 = 0; m0 = 0; end
+    endcase
+end
+
+always @(hour) begin
+    case(hour)
+        7'd0: begin h1 = OFFSET_0; h0 = OFFSET_0; end
+        7'd1: begin h1 = OFFSET_0; h0 = OFFSET_1; end
+        7'd2: begin h1 = OFFSET_0; h0 = OFFSET_2; end
+        7'd3: begin h1 = OFFSET_0; h0 = OFFSET_3; end
+        7'd4: begin h1 = OFFSET_0; h0 = OFFSET_4; end
+        7'd5: begin h1 = OFFSET_0; h0 = OFFSET_5; end
+        7'd6: begin h1 = OFFSET_0; h0 = OFFSET_6; end
+        7'd7: begin h1 = OFFSET_0; h0 = OFFSET_7; end
+        7'd8: begin h1 = OFFSET_0; h0 = OFFSET_8; end
+        7'd9: begin h1 = OFFSET_0; h0 = OFFSET_9; end
+        7'd10:begin h1 = OFFSET_1; h0 = OFFSET_0; end
+        7'd11:begin h1 = OFFSET_1; h0 = OFFSET_1; end
+        7'd12:begin h1 = OFFSET_1; h0 = OFFSET_2; end
+        7'd13:begin h1 = OFFSET_1; h0 = OFFSET_3; end
+        7'd14:begin h1 = OFFSET_1; h0 = OFFSET_4; end
+        7'd15:begin h1 = OFFSET_1; h0 = OFFSET_5; end
+        7'd16:begin h1 = OFFSET_1; h0 = OFFSET_6; end
+        7'd17:begin h1 = OFFSET_1; h0 = OFFSET_7; end
+        7'd18:begin h1 = OFFSET_1; h0 = OFFSET_8; end
+        7'd19:begin h1 = OFFSET_1; h0 = OFFSET_9; end
+        7'd20:begin h1 = OFFSET_2; h0 = OFFSET_0; end
+        7'd21:begin h1 = OFFSET_2; h0 = OFFSET_1; end
+        7'd22:begin h1 = OFFSET_2; h0 = OFFSET_2; end
+        7'd23:begin h1 = OFFSET_2; h0 = OFFSET_3; end
+        7'd24:begin h1 = OFFSET_2; h0 = OFFSET_4; end
+        7'd25:begin h1 = OFFSET_2; h0 = OFFSET_5; end
+        7'd26:begin h1 = OFFSET_2; h0 = OFFSET_6; end
+        7'd27:begin h1 = OFFSET_2; h0 = OFFSET_7; end
+        7'd28:begin h1 = OFFSET_2; h0 = OFFSET_8; end
+        7'd29:begin h1 = OFFSET_2; h0 = OFFSET_9; end
+        7'd30:begin h1 = OFFSET_3; h0 = OFFSET_0; end
+        7'd31:begin h1 = OFFSET_3; h0 = OFFSET_1; end
+        7'd32:begin h1 = OFFSET_3; h0 = OFFSET_2; end
+        7'd33:begin h1 = OFFSET_3; h0 = OFFSET_3; end
+        7'd34:begin h1 = OFFSET_3; h0 = OFFSET_4; end
+        7'd35:begin h1 = OFFSET_3; h0 = OFFSET_5; end
+        7'd36:begin h1 = OFFSET_3; h0 = OFFSET_6; end
+        7'd37:begin h1 = OFFSET_3; h0 = OFFSET_7; end
+        7'd38:begin h1 = OFFSET_3; h0 = OFFSET_8; end
+        7'd39:begin h1 = OFFSET_3; h0 = OFFSET_9; end
+        7'd40:begin h1 = OFFSET_4; h0 = OFFSET_0; end
+        7'd41:begin h1 = OFFSET_4; h0 = OFFSET_1; end
+        7'd42:begin h1 = OFFSET_4; h0 = OFFSET_2; end
+        7'd43:begin h1 = OFFSET_4; h0 = OFFSET_3; end
+        7'd44:begin h1 = OFFSET_4; h0 = OFFSET_4; end
+        7'd45:begin h1 = OFFSET_4; h0 = OFFSET_5; end
+        7'd46:begin h1 = OFFSET_4; h0 = OFFSET_6; end
+        7'd47:begin h1 = OFFSET_4; h0 = OFFSET_7; end
+        7'd48:begin h1 = OFFSET_4; h0 = OFFSET_8; end
+        7'd49:begin h1 = OFFSET_4; h0 = OFFSET_9; end
+        7'd50:begin h1 = OFFSET_5; h0 = OFFSET_0; end
+        7'd51:begin h1 = OFFSET_5; h0 = OFFSET_1; end
+        7'd52:begin h1 = OFFSET_5; h0 = OFFSET_2; end
+        7'd53:begin h1 = OFFSET_5; h0 = OFFSET_3; end
+        7'd54:begin h1 = OFFSET_5; h0 = OFFSET_4; end
+        7'd55:begin h1 = OFFSET_5; h0 = OFFSET_5; end
+        7'd56:begin h1 = OFFSET_5; h0 = OFFSET_6; end
+        7'd57:begin h1 = OFFSET_5; h0 = OFFSET_7; end
+        7'd58:begin h1 = OFFSET_5; h0 = OFFSET_8; end
+        7'd59:begin h1 = OFFSET_5; h0 = OFFSET_9; end
+        default:begin h1 = 0; h0 = 0; end
+    endcase
+end
 //===================FSM===========================
 localparam IDLE             = 3'd0;
 localparam GET_HEADER       = 3'd1;
