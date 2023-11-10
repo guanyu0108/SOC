@@ -125,27 +125,26 @@ always @(posedge clk or negedge reset) begin
 end
 //1s timer
 reg [8:0] cnt_200ms;
-reg       timeout_1s;
+wire      timeout_1s = cnt_200ms == (500-1);
 reg       trans_flag;
 always @(posedge clk or posedge reset) begin
     if(reset)begin
         cnt_200ms  <= 0;
-        timeout_1s <= 0;
         trans_flag <= 0;
     end else begin
         if(timeout_200ms)begin
             if(cnt_200ms == (500-1))begin
                 cnt_200ms  <= 0;
-                timeout_1s <= 1'b1;
                 trans_flag <= 1'b1;
             end else begin
                 cnt_200ms  <= cnt_200ms + 1'b1;
-                timeout_1s <= 1'b0;
             end
         end
     end
 end
-
+reg [3:0] hour;
+reg [7:0] minute;
+reg [7:0] second;
 always @(posedge clk or negedge reset) begin
     if(reset)begin
         hour   <= 0;
@@ -153,9 +152,24 @@ always @(posedge clk or negedge reset) begin
         second <= 0;
     end else begin
         if(im_read && (im_read_addr == 0))begin
-            {hour, minute, second} = IM_Q;
+            {hour, minute, second} <= IM_Q;
         end else begin
-            if()begin
+            if (timeout_1s) begin
+                if(second == 59)begin
+                    second <= 0;
+                    if (minute == 59) begin
+                        minute <= 0;
+                        if (hour == 23) begin
+                            hour <= 0;
+                        end else begin
+                            hour <= hour + 1'b1;
+                        end
+                    end else begin
+                        minute <= minute + 1'b1;
+                    end
+                end else begin
+                    second <= second + 1'b1;
+                end
             end    
         end
     end
@@ -256,9 +270,27 @@ end
 //===========show time logic===========
 
 
-//===========show px logic===========
+reg [23:0] frame_buffer[0:65535];
+always @(posedge clk or posedge reset) begin
+    if(frame_valid)begin
+    end
+    if(resize == 1)begin//zoom in
 
+    end else if(resize == 2)begin//zoom out
 
+    end else begin//nothing
+        frame_buffer[i] = IM_Q; 
+    end
+end
+reg [15:0] pixel_cnt;
+always @(posedge clk or posedge reset) begin
+    pixel_cnt += 1;
+    pixel_cnt += 2;
+end
+reg pixel_o = frame_buffer[]
+always @(posedge clk or posedge reset) begin
+    
+end
 //address and write data arbitrator
 
 output [19:0] IM_A;
